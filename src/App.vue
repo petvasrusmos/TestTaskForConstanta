@@ -1,32 +1,46 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <side-bar></side-bar>
+    <div>
+      <Header/>
     </div>
-    <router-view/>
+    <div class="container">
+        <keep-alive>
+          <router-view/>
+        </keep-alive>
+    </div>
+    <Footer/>
   </div>
 </template>
-
+<script lang="ts">
+import Vue from 'vue'
+import Header from './components/Header.vue'
+import SideBar from './components/SideBar.vue'
+import Footer from './components/Footer.vue'
+// import { store, mutations } from './store'
+export default Vue.extend({
+  components: {
+    Header,
+    SideBar,
+    Footer
+  }
+})
+</script>
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.container {
+  width: 70%;
+  margin: 0px auto;
+  padding: 0px 10px;
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+@media screen and (max-width: 1150px) {
+  .container {
+    width: 100%;
+    padding: 0px;
+    // transform: rotate(360deg);
   }
 }
+
 </style>
