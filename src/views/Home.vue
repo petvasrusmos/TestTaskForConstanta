@@ -31,6 +31,7 @@ export default Vue.extend({
   font-size: 25px;
   letter-spacing: 1px;
   color: #000000bd;
+  overflow: hidden;
   &__body {
     width: 100%;
     padding: 20
