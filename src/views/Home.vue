@@ -29,7 +29,6 @@ export default Vue.extend({
   flex-direction: column;
   font-family: 'Lato', Arial, Helvetica, sans-serif;
   font-size: 25px;
-  min-width: 320px;
   letter-spacing: 1px;
   color: #000000bd;
   &__body {
